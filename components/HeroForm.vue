@@ -4,7 +4,7 @@
       <label
         for="video-url"
         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-        >TikTok video URL</label
+        >TikTok {{ isPhoto ? "Photo" : "Video" }} URL</label
       >
       <div class="relative w-full lg:w-1/2 mr-2">
         <div
