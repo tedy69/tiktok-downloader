@@ -1,0 +1,20 @@
+.dark-mode {
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+
+.section {
+  @media screen and (min-width: 768px) {
+    padding: 3rem 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+}
+
+.example .link-example {
+  word-break: break-all;
+  color: #6c757d;
+  font-size: 0.875rem;
+  color: #d63384;
+}
