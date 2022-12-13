@@ -36,7 +36,7 @@ export default {
       {
         hid: "og:image",
         property: "og:image",
-        content: "https://tiktokvideodownloader.online/og-image.png",
+        content: "https://savetik.tedyfazrin.com/banner.png",
       },
       {
         hid: "og:site_name",
@@ -65,7 +65,7 @@ export default {
       {
         hid: "twitter:image",
         name: "twitter:image:src",
-        content: "https://tiktokvideodownloader.online/twitter-image.png",
+        content: "https://savetik.tedyfazrin.com/banner.png",
       },
       // Apple
       {
@@ -137,7 +137,7 @@ export default {
           "aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.png" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
