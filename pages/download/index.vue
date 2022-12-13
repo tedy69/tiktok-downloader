@@ -207,7 +207,7 @@
                   mb-2
                 "
               >
-                Download With Watermark
+                Download Music
               </button>
             </div>
             <div class="w-full lg:w-2/12 sm:w-full">
