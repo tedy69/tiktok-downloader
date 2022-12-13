@@ -67,7 +67,7 @@
             dark:focus:ring-blue-500
             dark:focus:border-blue-500
           "
-          placeholder="TikTok video URL"
+          :placeholder="`TikTok ${isPhoto ? 'Photo' : 'Video'} URL`"
           v-model="videoUrl"
         />
         <button
