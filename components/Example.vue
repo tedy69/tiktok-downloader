@@ -86,8 +86,6 @@
         <b class="text-black dark:text-white"
           >For example, the link would look like this</b
         >
-        <div class="link-example">https://v.douyin.com/3vn57r/</div>
-        <span class="text-black dark:text-white">or</span>
         <div class="link-example">
           https://www.tiktok.com/@tedyfazrin/video/7173277860721872155
         </div>
