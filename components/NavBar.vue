@@ -8,38 +8,20 @@
 
     <!-- Navbar -->
     <nav
-      class="
-        flex
-        justify-between
-        px-2
-        sm:px-4
-        py-4
-        bg-white
-        dark:bg-gray-900
-        backdrop-blur-md
-        shadow-md
-        w-full
-        fixed
-        top-0
-        left-0
-        right-0
-        z-10
-      "
+      class="flex justify-between px-2 sm:px-4 py-4 bg-white dark:bg-gray-900 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10"
     >
       <!-- Logo Container -->
       <div class="flex items-center">
         <!-- Logo -->
         <a class="cursor-pointer" @click="$router.push('/')">
           <h3 class="text-2xl font-medium flex items-center">
-            <img class="h-10 object-cover" src="logo.png" alt="Savetik Logo" />
+            <img
+              class="h-10 object-cover"
+              src="https://savetik.tedyfazrin.com/logo.png"
+              alt="Savetik Logo"
+            />
             <span
-              class="
-                self-center
-                text-xl
-                font-semibold
-                whitespace-nowrap
-                dark:text-white
-              "
+              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
               >SaveTik</span
             >
           </h3>
@@ -53,17 +35,7 @@
           id="theme-toggle"
           data-tooltip-target="tooltip-toggle"
           type="button"
-          class="
-            text-gray-500
-            dark:text-gray-400
-            hover:bg-gray-100
-            dark:hover:bg-gray-700
-            focus:outline-none focus:ring-4 focus:ring-gray-200
-            dark:focus:ring-gray-700
-            rounded-lg
-            text-sm
-            p-2.5
-          "
+          class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
         >
           <svg
             aria-hidden="true"
@@ -128,5 +100,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
