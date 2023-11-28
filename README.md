@@ -1,3 +1,5 @@
+[![🚀 Deploy website on push](https://github.com/tedy69/tiktok-downloader/actions/workflows/master.yml/badge.svg)](https://github.com/tedy69/tiktok-downloader/actions/workflows/master.yml)
+
 # savetik
 
 ## Build Setup
