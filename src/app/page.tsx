@@ -1,103 +1,142 @@
-import Image from "next/image";
+import { HomeClient } from '@/components/HomeClient';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Free TikTok Video Downloader - No Watermark | HD Quality Download',
+  description:
+    'Download TikTok videos without watermark in HD quality. Fast, free, and secure TikTok video downloader. No registration required. Convert TikTok to MP4 instantly.',
+  keywords: [
+    'tiktok downloader',
+    'download tiktok video',
+    'no watermark',
+    'free tiktok downloader',
+    'tiktok video saver',
+    'hd quality download',
+    'mp4 download',
+    'tiktok to mp4',
+    'remove watermark tiktok',
+    'save tiktok video',
+    'online tiktok downloader',
+    'tiktok converter',
+  ],
+  openGraph: {
+    title: 'Free TikTok Video Downloader - No Watermark | HD Quality Download',
+    description:
+      'Download TikTok videos without watermark in HD quality. Fast, free, and secure TikTok video downloader.',
+    url: 'https://tiktokdownloader.com',
+    type: 'website',
+    images: [
+      {
+        url: '/banner.png',
+        width: 1200,
+        height: 630,
+        alt: 'TikTok Downloader - Free Video Download Tool',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Free TikTok Video Downloader - No Watermark | HD Quality Download',
+    description: 'Download TikTok videos without watermark in HD quality. Fast, free, and secure.',
+    images: ['/banner.png'],
+  },
+  alternates: {
+    canonical: 'https://tiktokdownloader.com',
+  },
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Structured Data for SEO */}
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: 'TikTok Downloader',
+            description:
+              'Download TikTok videos without watermark in HD quality. Fast, free, and secure TikTok video downloader.',
+            url: 'https://tiktokdownloader.com',
+            applicationCategory: 'MultimediaApplication',
+            operatingSystem: 'Any',
+            permissions: 'Free to use',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+            },
+            author: {
+              '@type': 'Person',
+              name: 'Tedy Fazrin',
+              email: 'gmail@tedyfazrin.com',
+            },
+            provider: {
+              '@type': 'Organization',
+              name: 'TikTok Downloader',
+              url: 'https://tiktokdownloader.com',
+            },
+            browserRequirements: 'Requires JavaScript. Requires HTML5.',
+            softwareVersion: '1.0',
+            featureList: [
+              'Download TikTok videos without watermark',
+              'HD quality video downloads',
+              'MP4 format support',
+              'No registration required',
+              'Free to use',
+              'Fast processing',
+              'Secure downloads',
+            ],
+          }),
+        }}
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* FAQ Structured Data */}
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How do I download TikTok videos without watermark?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Simply paste the TikTok video URL into our downloader, click download, and get your video without watermark in HD quality.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Is this TikTok downloader free?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, our TikTok downloader is completely free to use. No registration, no hidden fees, no premium features.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What video quality can I download?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'You can download TikTok videos in the best available quality, typically HD (720p or 1080p) when available from the original video.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Is it legal to download TikTok videos?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "You should only download videos for personal use and respect the original creator's copyright. Always ensure you have permission for any commercial use.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
+      <HomeClient />
+    </>
   );
 }
