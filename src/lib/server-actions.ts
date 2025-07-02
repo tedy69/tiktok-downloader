@@ -21,16 +21,24 @@ export async function getVideoInfo(url: string): Promise<VideoInfoResult> {
     }
 
     // Fetch video info from TikWM API - this happens completely on the server
-    const apiUrl = `https://tikwm.com/api/?url=${encodeURIComponent(url)}`;
+    const apiUrl = 'https://tikwm.com/api/';
+
+    // Prepare form data as required by the new API
+    const formData = new FormData();
+    formData.append('url', url);
+    formData.append('count', '12');
+    formData.append('cursor', '0');
+    formData.append('web', '1');
+    formData.append('hd', '1');
 
     const response = await fetch(apiUrl, {
-      method: 'GET',
+      method: 'POST',
       headers: {
-        Accept: 'application/json',
         'User-Agent':
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         Referer: 'https://tikwm.com/',
       },
+      body: formData,
       // Add cache revalidation to prevent caching issues
       cache: 'no-store',
     });

@@ -164,7 +164,7 @@ export function VideoResult({ video, onReset }: VideoResultProps) {
               ) : (
                 <>
                   <Image
-                    src={video.cover}
+                    src={`https://tikwm.com/${video.cover}`}
                     alt={video.title ?? 'TikTok Video'}
                     width={400}
                     height={225}
@@ -185,7 +185,7 @@ export function VideoResult({ video, onReset }: VideoResultProps) {
 
             <div className='flex items-center gap-3 mb-4'>
               <Image
-                src={video.author.avatar}
+                src={`https://tikwm.com/${video.author.avatar}`}
                 alt={video.author.nickname}
                 width={40}
                 height={40}

@@ -1,9 +1,19 @@
 import { TikTokVideo } from './types';
 
 export class TikTokService {
+  private static readonly TIKWM_BASE_URL = 'https://tikwm.com';
+
+  private static normalizeUrl(url: string): string {
+    if (url.startsWith('/')) {
+      return `${this.TIKWM_BASE_URL}${url}`;
+    }
+    return url;
+  }
+
   static async downloadVideo(videoUrl: string, filename: string): Promise<void> {
     try {
-      const response = await fetch(videoUrl);
+      const normalizedUrl = this.normalizeUrl(videoUrl);
+      const response = await fetch(normalizedUrl);
 
       if (!response.ok) {
         throw new Error(`Failed to download video: ${response.status}`);
@@ -29,7 +39,8 @@ export class TikTokService {
 
   static async downloadPhoto(photoUrl: string, filename: string): Promise<void> {
     try {
-      const response = await fetch(photoUrl);
+      const normalizedUrl = this.normalizeUrl(photoUrl);
+      const response = await fetch(normalizedUrl);
 
       if (!response.ok) {
         throw new Error(`Failed to download photo: ${response.status}`);
@@ -60,8 +71,9 @@ export class TikTokService {
 
     try {
       const downloadPromises = video.images.map(async (imageUrl, index) => {
+        const normalizedImageUrl = this.normalizeUrl(imageUrl);
         const filename = this.generatePhotoFilename(video, index + 1);
-        await this.downloadPhoto(imageUrl, filename);
+        await this.downloadPhoto(normalizedImageUrl, filename);
         // Add a small delay between downloads to avoid overwhelming the browser
         await new Promise((resolve) => setTimeout(resolve, 500));
       });
