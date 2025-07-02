@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Free TikTok Video Downloader - No Watermark | HD Quality Download',
     description:
       'Download TikTok videos without watermark in HD quality. Fast, free, and secure TikTok video downloader.',
-    url: 'https://tiktokdownloader.com',
+    url: 'https://savetik.tedyfazrin.com/',
     type: 'website',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ['/banner.png'],
   },
   alternates: {
-    canonical: 'https://tiktokdownloader.com',
+    canonical: 'https://savetik.tedyfazrin.com/',
   },
 };
 
@@ -57,7 +57,7 @@ export default function Home() {
             name: 'TikTok Downloader',
             description:
               'Download TikTok videos without watermark in HD quality. Fast, free, and secure TikTok video downloader.',
-            url: 'https://tiktokdownloader.com',
+            url: 'https://savetik.tedyfazrin.com/',
             applicationCategory: 'MultimediaApplication',
             operatingSystem: 'Any',
             permissions: 'Free to use',
@@ -74,7 +74,7 @@ export default function Home() {
             provider: {
               '@type': 'Organization',
               name: 'TikTok Downloader',
-              url: 'https://tiktokdownloader.com',
+              url: 'https://savetik.tedyfazrin.com/',
             },
             browserRequirements: 'Requires JavaScript. Requires HTML5.',
             softwareVersion: '1.0',

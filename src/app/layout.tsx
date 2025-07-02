@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 const inter = Inter({
@@ -14,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tiktokdownloader.com'),
+  metadataBase: new URL('https://savetik.tedyfazrin.com/'),
   title: {
     default: 'TikTok Downloader - Download Videos Without Watermark | Free HD Quality',
     template: '%s | TikTok Downloader',
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://tiktokdownloader.com',
+    url: 'https://savetik.tedyfazrin.com/',
     siteName: 'TikTok Downloader',
     title: 'TikTok Downloader - Download Videos Without Watermark | Free HD Quality',
     description:
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     images: ['/banner.png'],
   },
   alternates: {
-    canonical: 'https://tiktokdownloader.com',
+    canonical: 'https://savetik.tedyfazrin.com/',
   },
   category: 'technology',
   classification: 'Video Downloader Tool',
@@ -93,6 +94,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} antialiased font-sans gradient-bg min-h-screen`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
