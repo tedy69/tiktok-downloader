@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Hero } from '@/components/Hero';
 import { DownloadForm } from '@/components/DownloadForm';
 import { VideoResult } from '@/components/VideoResult';
@@ -10,6 +10,10 @@ import { TikTokVideo } from '@/lib/types';
 
 export function HomeClient() {
   const [video, setVideo] = useState<TikTokVideo | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [video]);
 
   const handleVideoFound = (foundVideo: TikTokVideo) => {
     setVideo(foundVideo);
