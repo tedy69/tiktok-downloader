@@ -7,7 +7,8 @@ export function cn(...inputs: ClassValue[]) {
 
 // TikTok URL validation
 export function isValidTikTokUrl(url: string): boolean {
-  const tikTokUrlPattern = /^https?:\/\/(www\.)?(tiktok\.com|vm\.tiktok\.com|m\.tiktok\.com)/;
+  const tikTokUrlPattern =
+    /^https?:\/\/(www\.)?(tiktok\.com|vm\.tiktok\.com|m\.tiktok\.com|vt\.tiktok\.com)/;
   return tikTokUrlPattern.test(url);
 }
 
@@ -18,6 +19,7 @@ export function extractTikTokId(url: string): string | null {
     /tiktok\.com\/v\/(\d+)/,
     /vm\.tiktok\.com\/([A-Za-z0-9]+)/,
     /m\.tiktok\.com\/v\/(\d+)/,
+    /vt\.tiktok\.com\/([A-Za-z0-9]+)/,
   ];
 
   for (const pattern of patterns) {

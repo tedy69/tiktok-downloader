@@ -1,37 +1,6 @@
-import { TikTokVideo, DownloadResponse } from './types';
+import { TikTokVideo } from './types';
 
 export class TikTokService {
-  static async getVideoInfo(url: string): Promise<TikTokVideo> {
-    try {
-      const response = await fetch('/api/download', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error ?? `HTTP error! status: ${response.status}`);
-      }
-
-      const data: DownloadResponse = await response.json();
-
-      if (data.code !== 0) {
-        throw new Error(data.msg || 'Failed to fetch video information');
-      }
-
-      return data.data;
-    } catch (error) {
-      console.error('Error fetching video info:', error);
-      throw error instanceof Error
-        ? error
-        : new Error('An unknown error occurred while fetching video information');
-    }
-  }
-
   static async downloadVideo(videoUrl: string, filename: string): Promise<void> {
     try {
       const response = await fetch(videoUrl);

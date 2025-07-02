@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { TikTokVideo } from '@/lib/types';
-import { TikTokService } from '@/lib/tiktok-service';
+import { TikTokService } from '@/lib/tiktok-service-client';
 import { formatFileSize } from '@/lib/utils';
 
 interface VideoResultProps {

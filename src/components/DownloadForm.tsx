@@ -6,9 +6,9 @@ import { Download, Loader2, Link as LinkIcon, AlertCircle } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { TikTokService } from '@/lib/tiktok-service';
 import { TikTokVideo } from '@/lib/types';
 import { isValidTikTokUrl } from '@/lib/utils';
+import { getVideoInfo } from '@/lib/server-actions';
 
 const formSchema = z.object({
   url: z
@@ -41,11 +41,18 @@ export function DownloadForm({ onVideoFound }: DownloadFormProps) {
     setError(null);
 
     try {
-      const video = await TikTokService.getVideoInfo(data.url);
-      onVideoFound(video);
-      reset();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to fetch video information');
+      // Call server action - this happens completely on the server
+      const result = await getVideoInfo(data.url);
+      
+      if (result.success && result.data) {
+        onVideoFound(result.data);
+        reset();
+      } else {
+        setError(result.error ?? 'Failed to fetch video information');
+      }
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch video information';
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
